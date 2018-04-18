@@ -5,22 +5,19 @@
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 200;
-    src: url("../fonts/hkgrotesk-light-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-light-webfont.woff") format("woff");
+    src: url("../fonts/hkgrotesk-light-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-light-webfont.woff") format("woff");
 }
 
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 400;
-    src: url("../fonts/hkgrotesk-regular-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-regular-webfont.woff") format("woff");
+    src: url("../fonts/hkgrotesk-regular-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-regular-webfont.woff") format("woff");
 }
 
 @font-face {
     font-family: "HK Grotesk Web";
     font-weight: 600;
-    src: url("../fonts/hkgrotesk-medium-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-medium-webfont.woff") format("woff");
+    src: url("../fonts/hkgrotesk-medium-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-medium-webfont.woff") format("woff");
 }
 
 /*------------------------------------*\
@@ -43,9 +40,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -96,9 +91,7 @@ img {
     Default markup for typographic elements
 */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-weight: 200;
 }
 
@@ -120,31 +113,21 @@ h3 {
     margin: 0 0 24px;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
     font-size: 20px;
     line-height: 24px;
     margin: 0 0 24px;
 }
 
-p,
-ol,
-ul,
-dl,
-table,
-address,
-figure {
+p, ol, ul, dl, table, address, figure {
     margin: 0 0 24px;
 }
 
-ul,
-ol {
+ul, ol {
     padding-left: 24px;
 }
 
-li ul,
-li ol {
+li ul, li ol {
     margin-bottom: 0;
 }
 
@@ -180,10 +163,7 @@ a {
     transition: all .1s ease-in-out;
 }
 
-a:visited,
-a:active,
-a:hover,
-a:focus {
+a:visited, a:active, a:hover, a:focus {
     color: #3E3EA8;
 }
 
@@ -214,12 +194,10 @@ a:focus {
         padding-left: 48px;
         padding-right: 48px;
     }
-
     .o-row--md {
         padding-top: 48px;
         padding-bottom: 24px;
     }
-
     .o-row--lg {
         padding-top: 72px;
         padding-bottom: 48px;
@@ -235,7 +213,8 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 56.4em;
+    /* 56.4 * 20px = 1128px */
 }
 
 /*
@@ -253,9 +232,9 @@ a:focus {
     flex-wrap: wrap;
 }
 
-    .o-layout__item {
-        width: 100%;
-    }
+.o-layout__item {
+    width: 100%;
+}
 
 /* gutter modifiers, these affect o-layout__item too */
 
@@ -263,7 +242,7 @@ a:focus {
     margin: 0 -12px;
 }
 
-.o-layout--gutter > .o-layout__item {
+.o-layout--gutter>.o-layout__item {
     padding: 0 12px;
 }
 
@@ -271,7 +250,7 @@ a:focus {
     margin: 0 -6px;
 }
 
-.o-layout--gutter-sm > .o-layout__item {
+.o-layout--gutter-sm>.o-layout__item {
     padding: 0 6px;
 }
 
@@ -279,7 +258,7 @@ a:focus {
     margin: 0 -24px;
 }
 
-.o-layout--gutter-lg > .o-layout__item {
+.o-layout--gutter-lg>.o-layout__item {
     padding: 0 24px;
 }
 
@@ -361,23 +340,26 @@ a:focus {
     Creates vertical whitespace between adjacent sections inside a row
 */
 
+.o-row--neutral-x-light {
+    background-color: #F7F7Fa;
+}
+
 .o-section {
     overflow-x: hidden;
 }
 
-.o-section + .o-section {
+.o-section+.o-section {
     margin-top: 24px;
 }
 
 @media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
+    .o-section--lg+.o-section--lg, .o-section--xl+.o-section--xl {
         margin-top: 48px;
     }
 }
 
 @media (min-width: 1200px) {
-    .o-section--xl + .o-section--xl {
+    .o-section--xl+.o-section--xl {
         margin-top: 72px;
     }
 }
@@ -393,6 +375,18 @@ a:focus {
     padding: 0;
 }
 
+/*
+    objects: gradient
+    ------------------------------------
+    adding gradient
+*/
+
+.o-row--gradient {
+    color: white;
+    background: linear-gradient(to top right, #5051DB, #3887F7);
+    /* Fx 10+, Op 11.6+, Ch 26+, IE 10 */
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
@@ -402,6 +396,74 @@ a:focus {
     ---
     Main header of the website
 */
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead {
+    font-weight: 200;
+}
+
+.c-lead--lg {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.c-lead--xl {
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.c-lead--xxl {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.c-lead--xxxl {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+@media (min-width: 768px) {
+    .c-lead--lg {
+        font-size: 23px;
+        line-height: 32px;
+    }
+    .c-lead--xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .c-lead--xxl {
+        font-size: 41px;
+        line-height: 48px;
+    }
+    .c-lead--xxxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-lead--lg {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .c-lead--xl {
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .c-lead--xxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+    .c-lead--xxxl {
+        font-size: 66px;
+        line-height: 72px;
+    }
+}
 
 .c-header__nav {
     display: none;
@@ -413,7 +475,6 @@ a:focus {
         justify-content: space-between;
         align-items: center;
     }
-
     .c-header__nav {
         display: block;
     }
@@ -440,6 +501,63 @@ a:focus {
 }
 
 /*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 4px 0;
+    transition: color .175s ease-in;
+}
+
+.c-link-cta, .c-link-cta:visited, .c-link-cta:active {
+    color: #7373F5;
+}
+
+.c-link-cta::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(.5);
+    transform-origin: left;
+    background-color: #7373F5;
+    transition-duration: .175s;
+    transition-timing-function: ease-in;
+}
+
+.c-link-cta:hover {
+    color: #3E3EA8;
+}
+
+.c-link-cta:hover::after {
+    background-color: #3E3EA8;
+    transform: scaleX(1);
+}
+
+.c-link-cta--inverse, .c-link-cta--inverse:visited, .c-link-cta--inverse:active {
+    color: white;
+}
+
+.c-link-cta--inverse::after {
+    background-color: white;
+}
+
+.c-link-cta--inverse:hover::after {
+    background-color: white;
+}
+
+/*
     Component: Nav
     ---
     Main navigation of the site
@@ -461,20 +579,15 @@ a:focus {
     padding: 8px 0;
 }
 
-.c-nav__link,
-.c-nav__link:visited,
-.c-nav__link:active {
+.c-nav__link, .c-nav__link:visited, .c-nav__link:active {
     color: #202024;
 }
 
-.c-nav__link--meta,
-.c-nav__link--meta:visited,
-.c-nav__link--meta:active {
+.c-nav__link--meta, .c-nav__link--meta:visited, .c-nav__link--meta:active {
     color: #6C6C75;
 }
 
-.c-nav__link:hover,
-.c-nav__link:focus {
+.c-nav__link:hover, .c-nav__link:focus {
     color: #5051db;
 }
 
@@ -484,15 +597,82 @@ a:focus {
         margin-left: -16px;
         margin-right: -16px;
     }
-
     .c-nav__link {
         padding: 8px 16px;
+    }
+}
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+        align-items: center;
+    }
+    .c-footer__logo {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+    .c-footer__nav {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+    .c-footer__logo {
+        width: auto;
+    }
+    .c-footer__logo+.c-footer__nav {
+        order: -1;
+    }
+    .c-footer__nav {
+        padding: 0;
     }
 }
 
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-primary-light {
+    color: #7373F5;
+}
+
+.u-color-primary-base {
+    color: #5051DB;
+}
+
+.u-color-primary-dark {
+    color: #3E3EA8;
+}
 
 /*
     Utilities: max-width
@@ -773,9 +953,7 @@ a:focus {
 */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         /* Black prints faster:
@@ -783,8 +961,7 @@ a:focus {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
     a[href]:after {
@@ -797,15 +974,13 @@ a:focus {
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
@@ -816,18 +991,14 @@ a:focus {
     thead {
         display: table-header-group;
     }
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }
